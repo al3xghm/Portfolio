@@ -6,15 +6,24 @@
     height: 100vh;
 }
 
+.container {
+    /* Styles de votre conteneur */
+    opacity: 0; /* Commencez avec une opacité de 0 */
+    transition: opacity 1s ease-in-out; /* Ajoutez une transition d'opacité */
+  }
+  
+  .container.fade-in {
+    opacity: 1; /* Augmentez l'opacité à 1 pour afficher le contenu */
+  }
+
 .head {
     display: flex;
-    align-items: space-between;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
     position: relative;
 
     .headTitle {
-        font-size: 3rem;
         display: flex;
         height: 100%;
         margin: 0 auto;
@@ -23,12 +32,7 @@
         justify-content: center;
         text-transform: uppercase;
         text-align: center;
-
-        svg {
-            height: 50px;
-            width: 50px;
-            fill: var(--color);
-        }
+        margin-top: 100px;
 
         h1 {
             width: fit-content;
@@ -116,6 +120,10 @@
         align-self: start;
     }
 
+    h2, p{
+        mix-blend-mode: difference;
+    }
+
     p {
         border-radius: 15px;
         border: 1px solid var(--color);
@@ -140,27 +148,28 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+
         margin: 0 auto;
-        overflow: hidden;
         transition: all 0.5s ease-in-out;
 
         &:hover .projectImage {
-            transform: translateY(-100%);
-            /* Déplacer l'image vers le haut */
+
+           background-position: center;
+           height: 100%;
+            opacity: 1;
+            transition: all 0.5s ease-in-out;
         }
 
         .projectImage {
             position: absolute;
-            top: 100%;
-            /* Positionner l'image en bas de la div .project */
+            top: 0;
             left: 0;
-            width: 100%;
-            height: auto;
             z-index: -1;
-            /* Assurer que l'image est en arrière-plan */
             transition: all 0.5s ease-in-out;
-            /* Ajout pour la transition */
-
+            background-position: top;
+            width: 100%;
+            background-size: cover;
+            opacity: 0;
         }
     }
 }
@@ -187,6 +196,99 @@
         display: flex;
         align-items: center;
         gap: 0.5rem;
+    }
+}
+
+// Responsive design
+@media (max-width: 1200px) {
+    .about {
+        gap: 5rem;
+
+        .aboutText {
+            width: 60%;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .head .headTitle {
+        h1 {
+            font-size: 6rem;
+
+            &:last-child {
+                font-size: 1.2rem;
+            }
+        }
+    }
+
+    .about {
+        .aboutText {
+            width: 70%;
+        }
+
+        .aboutImage {
+            width: 300px;
+            height: 300px;
+        }
+    }
+
+    .projects h1 {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .head .headTitle {
+        h1 {
+            font-size: 4rem;
+
+            &:last-child {
+                font-size: 1rem;
+            }
+        }
+    }
+
+    .about {
+        flex-direction: column;
+        gap: 2rem;
+        height: 100vh;
+
+        .aboutText {
+            width: 80%;
+        }
+
+        .aboutImage {
+            width: 90%;
+            height: 40%;
+        }
+    }
+
+    .projects {
+height: 100vh;   
+ }
+
+    .projects h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .head .headTitle {
+        h1 {
+            font-size: 3rem;
+
+            &:last-child {
+                font-size: 0.8rem;
+            }
+        }
+    }
+
+    .about .aboutText {
+        width: 90%;
+    }
+
+    .projects h1 {
+        font-size: 2rem;
     }
 }
 

@@ -12,9 +12,30 @@ import HTMLImage from '/public/html5.svg';
 import CSSImage from '/public/css3.svg';
 import SassImage from '/public/sass.svg';
 import NextJSImage from '/public/nextjs.svg';
+import Loader from '../components/Loader'; // Importez le composant Loader
 
 export default function Home() {
   const [time, setTime] = useState('');
+  const [showLoader, setShowLoader] = useState(true); // État pour afficher le loader
+  const [contentLoaded, setContentLoaded] = useState(false); // État pour vérifier si le contenu est chargé
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowLoader(false); // Désactiver le loader après 4 secondes
+    }, 2000);
+
+    return () => clearTimeout(timer); // Nettoyage du timer
+  }, []);
+
+  useEffect(() => {
+    if (!showLoader) {
+      document.body.style.overflow = 'auto'; // Réactiver le défilement de la page
+      setContentLoaded(true); // Marquer que le contenu est chargé
+      // remove loader from dom
+    } else {
+      document.body.style.overflow = 'hidden'; // Désactiver le défilement de la page pendant le chargement
+    }
+  }, [showLoader]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -44,10 +65,13 @@ export default function Home() {
 
   return (
     <>
-      <div className="container">
+      <Loader show={showLoader} /> {/* Passer showLoader comme une prop au composant Loader */}
+      <div className={`container ${contentLoaded ? 'fade-in' : ''}`}>
+        {/* Utiliser une classe CSS pour ajouter un effet de fondu */}
         <section className={styles.head}>
           <div className={styles.headTitle}>
-            <SplineViewer />
+        <SplineViewer />
+
             <h1>Alexandre Ghmir</h1>
             <h1>Multimedia Student</h1>
           </div>
@@ -85,11 +109,9 @@ export default function Home() {
             {projects.map((project) => (
               <Link href={`/${project.slug}`} key={project.id} >
                 <div className={styles.project}>
-                  <h3>{project.id}</h3>
                   <h2>{project.title}</h2>
                   <p>{project.date}</p>
-                  <div className={styles.projectImage}>
-                    <img src={project.image} alt={project.title} />
+                  <div className={styles.projectImage} style={{ backgroundImage: `url(${project.image})` }}>
                   </div>
                 </div>
               </Link>
