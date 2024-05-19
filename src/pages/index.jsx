@@ -47,7 +47,7 @@ export default function Home() {
       <div className="container">
         <section className={styles.head}>
           <div className={styles.headTitle}>
-      <SplineViewer />
+            <SplineViewer />
             <h1>Alexandre Ghmir</h1>
             <h1>Multimedia Student</h1>
           </div>
@@ -64,8 +64,8 @@ export default function Home() {
             <TextReveal text="I'm a multimedia student based in Paris, France. I'm passionate about web development, design, and digital art. I'm currently studying at Gustave Eiffel, a university in Paris. I'm always looking for new opportunities to learn and grow. Feel free to contact me if you want to work together or just to say hi!"></TextReveal>
             <div className={styles.carousel}>
               <div className={styles.move}>
-                {allProgrammingLanguages.map(({ name, image }) => (
-                  <span key={name}>
+                {allProgrammingLanguages.map(({ name, image }, index) => (
+                  <span key={`${name}-${index}`}>
                     <Image src={image} alt={name} width={25} height={25} />
                     {name}
                   </span>
@@ -79,8 +79,8 @@ export default function Home() {
           </div>
         </section>
 
-        <section className={styles.projects} id="projects">
-          <h1>My projects</h1>
+        <section className={styles.projects}>
+          <h1 id="projects">My projects</h1>
           <div className={styles.projectsContainer}>
             {projects.map((project) => (
               <Link href={`/${project.slug}`} key={project.id} >

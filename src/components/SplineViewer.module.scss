@@ -8,7 +8,9 @@
   height: 600px; /* Hauteur du conteneur */
   margin: 0 auto; /* Centre le conteneur horizontalement */
   overflow: hidden; /* Empêche les éléments internes de dépasser et de créer des barres de défilement */
+  opacity: 0.7; /* Opacité du conteneur */
 }
+
 
 .canvas {
   width: 100%;
