@@ -1,0 +1,35 @@
+[
+    {
+      "id": 1,
+      "title": "WeRent",
+      "slug": "projet-1",
+      "description": "Description du projet 1",
+      "date": "2022",
+      "image": "/foret.jpeg"
+    },
+    {
+      "id": 2,
+      "title": "Projet 2",
+      "slug": "projet-2",
+      "description": "Description du projet 2",
+      "date": "2022",
+      "image": "/foret.jpeg"
+    },
+    {
+      "id": 3,
+      "title": "Projet 3",
+      "slug": "projet-3",
+      "description": "Description du projet 3",
+      "date": "2022",
+      "image": "/foret.jpeg"
+    },
+    {
+    "id": 4,
+      "title": "Projet 4",
+      "slug": "projet-4",
+      "description": "Description du projet 4",
+      "date": "2022",
+      "image": "/foret.jpeg"
+    }
+  ]
+  

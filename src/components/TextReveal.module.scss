@@ -1,0 +1,30 @@
+.reveal {
+    padding-left: 30%;
+    padding-right: 10%;
+  }
+  
+  .reveal-text {
+    font-weight: 800;
+    filter: drop-shadow(0 0 0.06rem rgb(2, 2, 2));
+  }
+  
+  .spacing-small {
+    height: 50vh;
+  }
+  
+  .spacing {
+    height: 100vh;
+  }
+  
+  .letter {
+    display: inline-block;
+    opacity: 0; /* On cache initialement les lettres */
+    transform: translateY(50px); /* On les déplace vers le bas */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Transition pour l'opacité et la translation */
+  }
+
+  .textContainer{
+    font-size: 1.3rem;
+  }
+  
+  

@@ -1,0 +1,200 @@
+.head,
+.about,
+.skills,
+.projects,
+.contact {
+    width: 100%;
+    height: 100vh;
+}
+
+.head {
+    display: flex;
+    align-items: space-between;
+    justify-content: space-between;
+    flex-direction: column;
+    position: relative;
+
+    .headTitle {
+        font-size: 3rem;
+        display: flex;
+        height: 100%;
+        margin: 0 auto;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-transform: uppercase;
+
+        svg {
+            height: 50px;
+            width: 50px;
+            fill: var(--color);
+        }
+
+        h1 {
+            width: fit-content;
+            line-height: 0.9;
+            font-size: 9rem;
+            color: var(--color);
+            mix-blend-mode: difference;
+
+            &:last-child {
+                font-weight: 400;
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+    .headBottom {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px 10px;
+        // text-transform: uppercase;
+    }
+}
+
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10rem;
+
+    .aboutText {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        h1 {
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--color);
+        }
+    }
+
+    .aboutImage {
+        width: 400px;
+        height: 400px;
+        background-position: center;
+        background-size: cover;
+        background-image: url('../assets/img/alexandre.jpg');
+    }
+
+    .aboutButton {
+        align-self: start;
+        padding: 10px 20px;
+        border: 1px solid var(--color);
+        border-radius: 15px;
+        background-color: transparent;
+        color: var(--color);
+        cursor: pointer;
+        transition: all 0.5s ease-in-out;
+
+        &:hover {
+            background-color: var(--color);
+            color: var(--bg-color);
+        }
+
+    }
+}
+
+.projects {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    width: 90%;
+    margin: 0 auto;
+
+    h1 {
+        font-weight: 700;
+        color: var(--color);
+        font-size: 4rem;
+        align-self: start;
+    }
+
+    p {
+        border-radius: 15px;
+        border: 1px solid var(--color);
+        padding: 5px 10px;
+    }
+
+    .projectsContainer {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .project {
+        position: relative;
+        height: 125px;
+        width: 100%;
+        border: 1px solid var(--color);
+        border-left: none;
+        border-right: none;
+        border-bottom: none;
+        padding: 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 auto;
+        overflow: hidden;
+        transition: all 0.5s ease-in-out;
+
+        &:hover .projectImage {
+            transform: translateY(-100%);
+            /* Déplacer l'image vers le haut */
+        }
+
+        .projectImage {
+            position: absolute;
+            top: 100%;
+            /* Positionner l'image en bas de la div .project */
+            left: 0;
+            width: 100%;
+            height: auto;
+            z-index: -1;
+            /* Assurer que l'image est en arrière-plan */
+            transition: all 0.5s ease-in-out;
+            /* Ajout pour la transition */
+
+        }
+    }
+}
+
+.carousel {
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-radius: 15px;
+
+
+    .move {
+        display: flex;
+        width: max-content;
+        animation: moveSlideshow 40s linear infinite;
+    }
+
+    span {
+        padding: 0 20px;
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+}
+
+@keyframes moveSlideshow {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}

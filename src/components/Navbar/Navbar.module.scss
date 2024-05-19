@@ -1,0 +1,63 @@
+.navbar {
+  padding: 30px;
+  z-index: 1000;
+  color: var(--color);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  mix-blend-mode: difference;
+  background: transparent;
+  transition: opacity 0.3s; // Ajouter une transition d'opacité pour une animation douce
+
+  &.hidden {
+    opacity: 0; // Faire disparaître la barre de navigation
+    pointer-events: none; // Désactiver les événements de souris lorsque la barre est cachée
+  }
+}
+
+.navLinks {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+
+  li {
+    font-weight: 400;
+
+    &:not(:first-child) {
+      a {
+        text-decoration: none;
+        position: relative;
+        transition: all 0.5s ease-in-out;
+        cursor: pointer;
+        text-transform: uppercase;
+      }
+
+      a::after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 1.5px;
+        top: 100%;
+        left: 0;
+        background: var(--color);
+        transition: transform 0.5s;
+        transform: scaleX(0);
+        transform-origin: right;
+      }
+
+      a:hover::after {
+        transform: scaleX(1);
+        transform-origin: left;
+      }
+    }
+
+    &:first-child {
+      margin-right: auto;
+      font-weight: 700;
+      transition: none; // Supprimer la transition pour le premier élément li
+    }
+  }
+}
