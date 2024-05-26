@@ -27,7 +27,6 @@ function SplineViewer() {
     return () => {
       // Supprimez l'écouteur d'événements de défilement lors du démontage du composant
       window.removeEventListener('scroll', handleScroll);
-      app.destroy();
     };
   }, []);
 

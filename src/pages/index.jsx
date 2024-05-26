@@ -107,7 +107,7 @@ export default function Home() {
           <h1 id="projects">My projects</h1>
           <div className={styles.projectsContainer}>
             {projects.map((project) => (
-              <Link href={`/${project.slug}`} key={project.id} >
+              <Link href={`project/${project.slug}`} key={project.id} >
                 <div className={styles.project}>
                   <h2>{project.title}</h2>
                   <p>{project.date}</p>

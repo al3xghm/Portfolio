@@ -25,9 +25,6 @@ const Footer = () => {
                         <li>
                             <Link href="/#projects">Projects</Link>
                         </li>
-                        <li>
-                            <Link href="#contact">Contact</Link>
-                        </li>
                     </ul>
                 </div>
                 <div className={styles.footerSocial}>

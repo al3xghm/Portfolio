@@ -1,14 +1,10 @@
-// pages/work/[slug].jsx
 import React from 'react';
 import { useRouter } from 'next/router';
 import projects from '../../data/projects.json';
 
-const WorkPage = () => {
+const WorkPage = ({ project }) => {
   const router = useRouter();
   const { slug } = router.query;
-
-  // Rechercher le projet correspondant dans la liste des projets
-  const project = projects.find((proj) => proj.slug === slug);
 
   if (!project) {
     return <div>Project not found</div>;
@@ -17,8 +13,8 @@ const WorkPage = () => {
   return (
     <>
       <div>
-        <h1>{projects.title}</h1>
-        <p>{projects.description}</p>
+        <h1>{project.title}</h1>
+        <p>{project.description}</p>
       </div>
     </>
   );
