@@ -2,7 +2,6 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 import projects from '../../data/projects.json';
-import Navbar from '../../components/Navbar/Navbar';
 
 const WorkPage = () => {
   const router = useRouter();
@@ -12,14 +11,14 @@ const WorkPage = () => {
   const project = projects.find((proj) => proj.slug === slug);
 
   if (!project) {
-    return <div>Projet non trouvé</div>;
+    return <div>Project not found</div>;
   }
 
   return (
     <>
       <div>
-        <h1>{project.title}</h1>
-        <p>{project.description}</p>
+        <h1>{projects.title}</h1>
+        <p>{projects.description}</p>
       </div>
     </>
   );

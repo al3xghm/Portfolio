@@ -26,17 +26,17 @@ const Navbar = () => {
           </Link>
         </li>
         <li>
-          <Link href="#about">
+          <Link href="/#about">
             About
           </Link>
         </li>
         <li>
-          <Link href="#projects">
+          <Link href="/#projects">
             Work
           </Link>
         </li>
         <li>
-          <Link href="/contact">
+          <Link href="#contact">
             Contact
           </Link>
         </li>

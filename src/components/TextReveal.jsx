@@ -5,13 +5,13 @@ import styles from './TextReveal.module.scss';
 
 function TextReveal({ text }) {
     const containerRef = useRef(null);
-    const wordsRef = useRef([]);
+    const lettersRef = useRef([]);
 
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
 
         const container = containerRef.current;
-        const words = wordsRef.current;
+        const letters = lettersRef.current;
 
         const revealTimeline = gsap.timeline({
             scrollTrigger: {
@@ -22,27 +22,32 @@ function TextReveal({ text }) {
             }
         });
 
-        // Diviser le texte en mots
-        const wordsArray = text.split(" ");
+        // Diviser le texte en lettres et ajouter des espaces après chaque mot
+        const lettersArray = text.split("").map((char, index, array) => {
+            if (char === " " && array[index - 1] !== " " && index !== 0) {
+                return [" ", "\u00A0"];
+            }
+            return char;
+        }).flat();
 
-        wordsArray.forEach((word, index) => {
+        lettersArray.forEach((letter, index) => {
             const span = document.createElement("span");
-            span.textContent = word + " ";
-            span.className = styles.word;
+            span.textContent = letter;
+            span.className = styles.letter;
             container.appendChild(span);
-            words.push(span);
+            letters.push(span);
 
             revealTimeline.from(span, {
                 color: "#A2A2A2",
                 duration: 0.5,
-                delay: index * 0.1
-            });
+                delay: index * 0.05
+            }, 0);  // Starting all animations at the same time
         });
 
         return () => {
             revealTimeline.kill();
         };
-    }, []);
+    }, [text]);
 
     return (
         <div className={`reveal ${styles.textContainer}`} ref={containerRef}></div>

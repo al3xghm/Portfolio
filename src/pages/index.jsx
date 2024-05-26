@@ -68,7 +68,7 @@ export default function Home() {
       <Loader show={showLoader} /> {/* Passer showLoader comme une prop au composant Loader */}
       <div className={`container ${contentLoaded ? 'fade-in' : ''}`}>
         {/* Utiliser une classe CSS pour ajouter un effet de fondu */}
-        <section className={styles.head}>
+        <section id="home" className={styles.head}>
           <div className={styles.headTitle}>
         <SplineViewer />
 
