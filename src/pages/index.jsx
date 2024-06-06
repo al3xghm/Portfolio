@@ -8,10 +8,10 @@ import Image from 'next/image';
 import JavaScriptImage from '/public/javascript.svg';
 import PHPImage from '/public/php.svg';
 import MySQLImage from '/public/mysql.svg';
-import HTMLImage from '/public/html5.svg';
-import CSSImage from '/public/css3.svg';
 import SassImage from '/public/sass.svg';
 import NextJSImage from '/public/nextjs.svg';
+import AdobeImage from '/public/adobe.svg';
+import FigmaImage from '/public/figma.svg';
 import Loader from '../components/Loader'; // Importez le composant Loader
 
 export default function Home() {
@@ -54,10 +54,10 @@ export default function Home() {
     { name: 'JavaScript', image: JavaScriptImage },
     { name: 'PHP', image: PHPImage },
     { name: 'MySQL', image: MySQLImage },
-    { name: 'HTML', image: HTMLImage },
-    { name: 'CSS', image: CSSImage },
     { name: 'Sass', image: SassImage },
     { name: 'Next.js', image: NextJSImage },
+    { name: 'Adobe Suite', image: AdobeImage },
+    { name: 'Figma', image: FigmaImage },
   ];
 
   // Répéter les langages de programmation jusqu'à ce qu'ils soient tous affichés
@@ -107,14 +107,14 @@ export default function Home() {
           <h1 id="projects">My projects</h1>
           <div className={styles.projectsContainer}>
             {projects.map((project) => (
-              <Link href={`project/${project.slug}`} key={project.id} >
+              <a href={`project/${project.slug}`} key={project.id} >
                 <div className={styles.project}>
                   <h2>{project.title}</h2>
                   <p>{project.date}</p>
                   <div className={styles.projectImage} style={{ backgroundImage: `url(${project.image})` }}>
                   </div>
                 </div>
-              </Link>
+              </a>
             ))}
           </div>
         </section>

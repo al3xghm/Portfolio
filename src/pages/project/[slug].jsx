@@ -1,7 +1,7 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 import projects from '../../data/projects.json';
-
+import styles from '../../styles/page.module.scss';
 const WorkPage = ({ project }) => {
   const router = useRouter();
   const { slug } = router.query;
@@ -12,8 +12,10 @@ const WorkPage = ({ project }) => {
 
   return (
     <>
-      <div>
+      <div className={styles.projectcontainer}>
+        <div classeName={styles.projecthead}>
         <h1>{project.title}</h1>
+        </div>
         <p>{project.description}</p>
       </div>
     </>
