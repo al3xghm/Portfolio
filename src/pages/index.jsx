@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
 import projects from '../data/projects.json';
 import styles from "../styles/page.module.scss";
 import SplineViewer from '../components/SplineViewer.jsx';
@@ -111,7 +110,7 @@ export default function Home() {
                 <div className={styles.project}>
                   <h2>{project.title}</h2>
                   <p>{project.date}</p>
-                  <div className={styles.projectImage} style={{ backgroundImage: `url(${project.image})` }}>
+                  <div className={styles.projectImage} style={{ backgroundImage: `url(${project.images[0]})` }}>
                   </div>
                 </div>
               </a>

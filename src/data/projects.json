@@ -1,35 +1,17 @@
 [
-    {
-      "id": 1,
-      "title": "WeRent",
-      "slug": "werent",
-      "description": "Description du projet 1",
-      "date": "2022",
-      "image": "/foret.jpeg"
-    },
-    {
-      "id": 2,
-      "title": "Projet 2",
-      "slug": "projet-2",
-      "description": "Description du projet 2",
-      "date": "2022",
-      "image": "/foret.jpeg"
-    },
-    {
-      "id": 3,
-      "title": "Projet 3",
-      "slug": "projet-3",
-      "description": "Description du projet 3",
-      "date": "2022",
-      "image": "/foret.jpeg"
-    },
-    {
-    "id": 4,
-      "title": "Projet 4",
-      "slug": "projet-4",
-      "description": "Description du projet 4",
-      "date": "2022",
-      "image": "/foret.jpeg"
-    }
-  ]
-  
+  {
+    "id": 1,
+    "title": "WeRent",
+    "slug": "werent",
+    "skills": ["HTML", "CSS", "PHP", "SQL"],
+    "description": "It's a first-year student project. I've created a booking website called WeRent, which allows users to book various types of accommodations such as houses, villas, and apartments. In addition to using HTML, CSS, and JavaScript for the site's structure and interactivity, I've also employed PHP and MySQL to manage the database and server-side functionalities. Thanks to these technologies, WeRent offers a smooth and efficient booking experience for users.",
+    "date": "2022",
+    "images": [
+      "/wr1.png",
+      "/wr2.png",
+      "/wr3.png",
+      "/wr4.png"
+    ],
+    "link": "https://resaweb.ghmir.butmmi.o2switch.site/"
+  }
+]

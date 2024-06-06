@@ -39,7 +39,7 @@
             line-height: 0.9;
             font-size: 9rem;
             color: var(--color);
-            mix-blend-mode: soft-light !important;
+            mix-blend-mode: difference;
             pointer-events: none;
 
             &:last-child {
@@ -198,10 +198,6 @@
         align-items: center;
         gap: 0.5rem;
     }
-}
-
-.projectcontainer{
-    margin-top: 100px;
 }
 
 // Responsive design

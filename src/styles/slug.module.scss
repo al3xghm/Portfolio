@@ -1,0 +1,152 @@
+.projectcontainer {
+    margin-top: 80px;
+    padding: 0 60px;
+
+    svg{
+        color: var(--color);
+    }
+  
+    h1 {
+      font-size: 2.1rem;
+    }
+  
+    .projecthead {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 80%;
+        margin: 0 auto;
+    }
+  
+    .projectmain {
+      display: flex;
+      gap: 4rem;
+      margin-top: 20px;
+      width: 80%;
+      margin-right: auto;
+      margin-left: auto;
+  
+      .projectinfoleft {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        width: 50%;
+  
+        .skillsContainer {
+          display: flex;
+          gap: 10px;
+          flex-wrap: wrap;
+  
+          h2 {
+            font-size: 0.9em;
+            font-weight: 400;
+            padding: 8px 12px;
+            width: fit-content;
+            border: 1px solid var(--color);
+            border-radius: 20px;
+          }
+        }
+        p {
+          font-weight: 200;
+          font-size: 1.1rem;
+        }
+  
+        .aboutButton {
+          align-self: start;
+          padding: 10px 20px;
+          border: 1px solid var(--color);
+          border-radius: 15px;
+          background-color: transparent;
+          color: var(--color);
+          cursor: pointer;
+          transition: all 0.5s ease-in-out;
+  
+          &:hover {
+            background-color: var(--color);
+            color: var(--bg-color);
+          }
+        }
+      }
+      img {
+        width: 50%;
+        height: 20vw;
+        object-fit: cover;
+        border-radius: 15px;
+        align-self: center;
+      }
+    }
+  
+    .img {
+      margin-top: 50px;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      width: 80%;
+      margin-right: auto;
+      margin-left: auto;
+  
+      img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        border-radius: 15px;
+      }
+  
+      .twoimg {
+        display: flex;
+        gap: 2rem;
+  
+        img {
+          width: calc(50% - 1rem);
+        }
+      }
+    }
+  
+    .projectnav {
+      margin-top: 50px;
+      display: flex;
+      text-align: center;
+      border-top: 1px solid var(--color);
+      mix-blend-mode: difference;
+  
+      .previousProject{
+        border-right: 1px solid var(--color);
+      }
+
+      .nextProject, .previousProject {
+        width: 50%;
+        position: relative;
+        overflow: hidden;
+        height: 20vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        h3, p{
+            mix-blend-mode: difference;
+        }
+
+        &:hover .projectImage {
+          background-position: center;
+          height: 100%;
+          opacity: 1;
+          transition: all 0.5s ease-in-out;
+        }
+  
+        .projectImage {
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: -1;
+          transition: all 0.5s ease-in-out;
+          background-position: top;
+          width: 100%;
+          background-size: cover;
+          opacity: 0;
+          height: 100%;
+        }
+      }
+    }
+  }
+  
