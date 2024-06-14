@@ -15,6 +15,12 @@
     opacity: 0; // Faire disparaître la barre de navigation
     pointer-events: none; // Désactiver les événements de souris lorsque la barre est cachée
   }
+
+  @supports not (mix-blend-mode: difference) {
+    .navbar {
+      color: var(--color);
+    }
+  }
 }
 
 .navLinks {

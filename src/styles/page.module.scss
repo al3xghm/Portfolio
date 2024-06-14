@@ -48,6 +48,12 @@
                 font-weight: 400;
                 font-size: 1.5rem;
             }
+
+            @supports not (mix-blend-mode: difference) {
+                .h1 {
+                  color: var(--color);
+                }
+              }
         }
     }
 
