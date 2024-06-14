@@ -230,15 +230,6 @@
     }
 }
 
-@supports not (mix-blend-mode: difference) {
-    .head .headTitle h1,
-    .projects h2,
-    .projects p {
-      mix-blend-mode: normal;
-      color: var(--color); /* Assurez-vous de définir la couleur appropriée */
-    }
-  }
-
 // Responsive design
 @media (max-width: 1200px) {
     .about {
@@ -284,6 +275,7 @@
         .headTitle {
             h1 {
                 font-size: 4rem;
+                mix-blend-mode: normal;
 
                 &:last-child {
                     font-size: 1rem;
@@ -312,9 +304,16 @@
         }
     }
 
-    .projects h1 {
+    .projects {
+    h1 {
         font-size: 2.5rem;
     }
+
+    h2,
+    p {
+        mix-blend-mode: normal;
+    }
+}
 }
 
 @media (max-width: 576px) {
