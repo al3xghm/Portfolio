@@ -13,14 +13,8 @@ function TextReveal({ text }) {
         const container = containerRef.current;
         const letters = lettersRef.current;
 
-        const revealTimeline = gsap.timeline({
-            scrollTrigger: {
-                trigger: container,
-                start: "top center",
-                end: () => `+=${container.offsetHeight}`,
-                scrub: true
-            }
-        });
+        // Nettoyer les animations précédentes
+        gsap.globalTimeline.kill(); // Tuer toutes les animations actives
 
         // Diviser le texte en lettres et ajouter des espaces après chaque mot
         const lettersArray = text.split("").map((char, index, array) => {
@@ -30,6 +24,20 @@ function TextReveal({ text }) {
             return char;
         }).flat();
 
+        // Nettoyer le contenu existant dans le conteneur
+        container.innerHTML = '';
+
+        // Créer une nouvelle timeline pour les animations
+        const revealTimeline = gsap.timeline({
+            scrollTrigger: {
+                trigger: container,
+                start: "top center",
+                end: () => `+=${container.offsetHeight}`,
+                scrub: 1, // Utiliser scrub pour une animation fluide
+            }
+        });
+
+        // Créer et animer chaque lettre
         lettersArray.forEach((letter, index) => {
             const span = document.createElement("span");
             span.textContent = letter;
@@ -37,10 +45,13 @@ function TextReveal({ text }) {
             container.appendChild(span);
             letters.push(span);
 
-            revealTimeline.from(span, {
-                color: "#A2A2A2",
+            // Animation de base pour la lettre
+            revealTimeline.to(span, {
+                color: "var(--color)",
+                opacity: 1, // Augmenter l'opacité à 1
                 duration: 0.5,
-                delay: index * 0.05
+                ease: "power1.out", // Utiliser une courbe d.ease pour une transition douce
+                delay: index * 0.05,
             }, 0);  // Starting all animations at the same time
         });
 

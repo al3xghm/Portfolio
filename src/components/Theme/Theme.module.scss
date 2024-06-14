@@ -1,0 +1,47 @@
+.fixed {
+	position: fixed;
+	display: flex;
+	bottom: 32px;
+    right: 20px;
+	flex-direction: row;
+	animation: fadeIn 1s ease-in-out;
+	gap: 1rem;
+	align-items: flex-end;
+	z-index: 100;
+}
+
+.toggle {
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: auto;
+	margin: 0;
+	background-color: transparent;
+	border: none;
+	margin-right: 5px;
+}
+
+.toggle	svg {
+	display: block;
+	position: relative;
+	fill: var(--color) !important;
+}
+	
+
+@keyframes fadeIn {
+	from {
+	  opacity: 0;
+	}
+	to {
+	  opacity: 1;
+	}
+  }
+
+
+@media screen and (max-width: 768px) {
+.fixed{
+    bottom: 70px;
+    right: 15px;
+}
+}

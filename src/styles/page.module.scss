@@ -7,14 +7,16 @@
 }
 
 .container {
-    /* Styles de votre conteneur */
-    opacity: 0; /* Commencez avec une opacité de 0 */
-    transition: opacity 1s ease-in-out; /* Ajoutez une transition d'opacité */
-  }
-  
-  .container.fade-in {
-    opacity: 1; /* Augmentez l'opacité à 1 pour afficher le contenu */
-  }
+    opacity: 0;
+    /* Commencez avec une opacité de 0 */
+    transition: opacity 1s ease-in-out;
+    /* Ajoutez une transition d'opacité */
+}
+
+.container.fade-in {
+    opacity: 1;
+    /* Augmentez l'opacité à 1 pour afficher le contenu */
+}
 
 .head {
     display: flex;
@@ -54,7 +56,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 30px 10px;
+        padding: 30px 30px 30px 10px;
         // text-transform: uppercase;
     }
 }
@@ -121,7 +123,8 @@
         align-self: start;
     }
 
-    h2, p{
+    h2,
+    p {
         mix-blend-mode: difference;
     }
 
@@ -153,10 +156,20 @@
         margin: 0 auto;
         transition: all 0.5s ease-in-out;
 
+        &:hover {
+
+            h2,
+            p {
+                color: white;
+                transition: all 0.5s ease-in-out;
+                border-color: white;
+            }
+        }
+
         &:hover .projectImage {
 
-           background-position: center;
-           height: 100%;
+            background-position: center;
+            height: 100%;
             opacity: 1;
             transition: all 0.5s ease-in-out;
         }
@@ -187,8 +200,25 @@
 
     .move {
         display: flex;
-        width: max-content;
+        gap: 2rem;
         animation: moveSlideshow 40s linear infinite;
+
+        .language{
+            width: max-content;
+            display:flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .language div{
+            width: 25px;
+            height: 25px;
+
+            svg{
+                height: 25px;
+                width: 25px;
+            }
+        }
     }
 
     span {
@@ -206,10 +236,11 @@
         gap: 5rem;
 
         .aboutText {
-            width: 60%;
+            width: 40%;
         }
     }
 }
+
 
 @media (max-width: 992px) {
     .head .headTitle {
@@ -224,7 +255,7 @@
 
     .about {
         .aboutText {
-            width: 70%;
+            width: 40%;
         }
 
         .aboutImage {
@@ -239,15 +270,23 @@
 }
 
 @media (max-width: 768px) {
-    .head .headTitle {
-        h1 {
-            font-size: 4rem;
+    .head {
 
-            &:last-child {
-                font-size: 1rem;
+        .headTitle {
+            h1 {
+                font-size: 4rem;
+
+                &:last-child {
+                    font-size: 1rem;
+                }
             }
         }
+
+        .headBottom {
+            padding: 30px 10px;
+        }
     }
+
 
     .about {
         flex-direction: column;

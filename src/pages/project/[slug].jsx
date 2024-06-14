@@ -38,9 +38,9 @@ const WorkPage = ({ project }) => {
         <img src={project.images[0]} alt={project.title} />
       </div>
       <div className={styles.img}>
-        <img src={project.images[2]} alt={project.title} />
+        <img src={project.images[1]} alt={project.title} />
         <div className={styles.twoimg}>
-          <img src={project.images[1]} alt={project.title} />
+          <img src={project.images[2]} alt={project.title} />
           <img src={project.images[3]} alt={project.title} />
         </div>
       </div>
