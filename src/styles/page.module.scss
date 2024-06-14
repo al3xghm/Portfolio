@@ -48,12 +48,6 @@
                 font-weight: 400;
                 font-size: 1.5rem;
             }
-
-            @supports not (mix-blend-mode: difference) {
-                .h1 {
-                  color: var(--color);
-                }
-              }
         }
     }
 
@@ -235,6 +229,15 @@
         gap: 0.5rem;
     }
 }
+
+@supports not (mix-blend-mode: difference) {
+    .head .headTitle h1,
+    .projects h2,
+    .projects p {
+      mix-blend-mode: normal;
+      color: var(--color); /* Assurez-vous de définir la couleur appropriée */
+    }
+  }
 
 // Responsive design
 @media (max-width: 1200px) {

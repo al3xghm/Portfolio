@@ -19,7 +19,7 @@
 
 @supports not (mix-blend-mode: difference) {
   .navbar {
-    mix-blend-mode: normal; // Si le navigateur ne prend pas en charge mix-blend-mode, utilisez normal
+    mix-blend-mode: normal; /* Réinitialisation du mode de fusion à normal */
   }
 }
 
