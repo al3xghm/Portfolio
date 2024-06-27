@@ -107,7 +107,6 @@
       display: flex;
       text-align: center;
       border-top: 1px solid var(--color);
-      mix-blend-mode: difference;
   
       .previousProject{
         border-right: 1px solid var(--color);
@@ -122,20 +121,6 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
-
-        h3, p{
-            mix-blend-mode: difference;
-        }
-
-        &:hover {
-
-          h3,
-          p {
-              color: white;
-              transition: all 0.5s ease-in-out;
-              border-color: white;
-          }
-      }
 
         &:hover .projectImage {
           background-position: center;

@@ -41,7 +41,6 @@
             line-height: 0.9;
             font-size: 9rem;
             color: var(--color);
-            mix-blend-mode: difference;
             pointer-events: none;
 
             &:last-child {
@@ -123,11 +122,6 @@
         align-self: start;
     }
 
-    h2,
-    p {
-        mix-blend-mode: difference;
-    }
-
     p {
         border-radius: 15px;
         border: 1px solid var(--color);
@@ -160,9 +154,7 @@
 
             h2,
             p {
-                color: white;
                 transition: all 0.5s ease-in-out;
-                border-color: white;
             }
         }
 
@@ -275,7 +267,6 @@
         .headTitle {
             h1 {
                 font-size: 4rem;
-                mix-blend-mode: normal;
 
                 &:last-child {
                     font-size: 1rem;
@@ -307,12 +298,6 @@
     .projects {
     h1 {
         font-size: 2.5rem;
-    }
-
-    h2,
-    p {
-        mix-blend-mode: normal;
-        color: var(--color);
     }
 }
 }

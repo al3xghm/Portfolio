@@ -7,7 +7,6 @@
   width: 100%;
   text-transform: uppercase;
   font-size: 0.9rem;
-  mix-blend-mode: difference;
   background: transparent;
   transition: opacity 0.3s; // Ajouter une transition d'opacité pour une animation douce
 
@@ -59,11 +58,5 @@
       font-weight: 700;
       transition: none; // Supprimer la transition pour le premier élément li
     }
-  }
-}
-
-@media (max-width: 768px) {
-  .navbar {
-    mix-blend-mode: normal;
   }
 }
