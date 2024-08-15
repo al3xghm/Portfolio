@@ -1,16 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import Head from 'next/head';
 import projects from '../data/projects.json';
 import styles from "../styles/page.module.scss";
 import SplineViewer from '../components/SplineViewer.jsx';
 import TextReveal from '../components/TextReveal';
-import Image from 'next/image';
-import JavaScriptImage from '/public/javascript.svg';
-import PHPImage from '/public/php.svg';
-import MySQLImage from '/public/mysql.svg';
-import SassImage from '/public/sass.svg';
-import NextJSImage from '/public/nextjs.svg';
-import AdobeImage from '/public/adobe.svg';
-import FigmaImage from '/public/figma.svg';
 import Loader from '../components/Loader';
 
 export default function Home() {
@@ -100,6 +93,17 @@ export default function Home() {
 
   return (
     <>
+    <Head>
+      <title>Portfolio | Alexandre GHMIR</title>
+      <meta charSet="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta name="title" content="Portfolio | Alexandre GHMIR" />
+      <meta name="author" content="Alexandre GHMIR" />
+      <meta name="description" content="Alexandre Ghmir's portfolio website. Multimedia student based in Paris, France. Passionate about web development, design, and digital art." />
+      <meta property="og:title" content="Portfolio | Alexandre GHMIR" />
+      <meta property="og:description" content="Alexandre Ghmir's portfolio website. Multimedia student based in Paris, France. Passionate about web development, design, and digital art." />
+      <meta property="og:image" content="/favicon/android-chrome-512x512.png" />
+      </Head>
     {
       showLoader && <Loader show={showLoader} />
     }
@@ -147,6 +151,7 @@ export default function Home() {
                   <h2>{project.title}</h2>
                   <p>{project.date}</p>
                   <div className={styles.projectImage} style={{ backgroundImage: `url(${project.images[0]})` }}>
+                    <div className={styles.overlay}></div>
                   </div>
                 </div>
               </a>

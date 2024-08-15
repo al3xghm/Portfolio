@@ -7,18 +7,21 @@
   --color: white;
   --bg-color: rgb(23, 23, 23);
   --bg-darker-color: rgb(0, 0, 0);
+  --trans-bg-color: rgba(0, 0, 0, 0.5);
 }
 
 :root[data-theme='dark'] {
   --color: white;
   --bg-color: rgb(23, 23, 23);
   --bg-darker-color: rgb(0, 0, 0);
+  --trans-bg-color: rgba(0, 0, 0, 0.5);
 }
 
 :root[data-theme='light'] {
   --color: black;
   --bg-color: white;
   --bg-darker-color: rgb(164, 162, 162);
+  --trans-bg-color: rgba(255, 255, 255, 0.5);
 }
 
 *,

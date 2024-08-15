@@ -127,6 +127,17 @@
           height: 100%;
           opacity: 1;
           transition: all 0.5s ease-in-out;
+
+          .overlay{
+            width: 100%;
+            height: 100%;
+            background-color: var(--trans-bg-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.5s ease-in-out;
+            opacity: 1;
+          }
         }
   
         .projectImage {
@@ -140,6 +151,17 @@
           background-size: cover;
           opacity: 0;
           height: 100%;
+
+          .overlay{
+            width: 100%;
+            height: 100%;
+            background-color: var(--trans-bg-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.5s ease-in-out;
+            opacity: 0;
+          }
         }
       }
     }
