@@ -11,8 +11,14 @@
     z-index: 1000;
     transition: opacity 2.5s ease-in-out;
     opacity: 1;
+    
+    .logo{
+      filter: grayscale(100%);
+    }
   }
   
+ 
+
   .loaded {
     opacity: 0;
   }

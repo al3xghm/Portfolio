@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styles from './Loader.module.scss';
-import SplineViewer from './SplineViewer';
+import Image from 'next/image';
 
 const Loader = () => {
   const [loading, setLoading] = useState(true);
@@ -43,7 +43,7 @@ const Loader = () => {
   return (
     <>
     <div id="loader" ref={loaderRef} className={`${styles.loader} ${loading ? styles.loading : styles.loaded}`} onAnimationEnd={handleAnimationEnd}>
-      <SplineViewer />
+      <Image className={styles.logo} src="/baby.gif" alt="Baby" width={400} height={400} />
       <div className={styles.progress}>{progress}%</div>
     </div>
     </>

@@ -25,6 +25,20 @@
     flex-direction: column;
     position: relative;
 
+    .headImage {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: 0;
+        margin: auto auto;
+        width: 40rem;
+        height: auto;
+        filter: grayscale(100%);
+        opacity: 0.5;
+        max-width: 90vw;
+    }
+
     .headTitle {
         display: flex;
         height: 100%;

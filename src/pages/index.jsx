@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
 import projects from '../data/projects.json';
 import styles from "../styles/page.module.scss";
-import SplineViewer from '../components/SplineViewer.jsx';
+import Image from 'next/image';
 import TextReveal from '../components/TextReveal';
 import Loader from '../components/Loader';
 
@@ -110,7 +110,7 @@ export default function Home() {
       <div className={`container ${contentLoaded ? 'fade-in' : ''}`}>
         <section id="home" className={styles.head}>
           <div className={styles.headTitle}>
-            <SplineViewer />
+            <Image className={styles.headImage} src="/anim.gif" alt="Anim" width={200} height={200} />
             <h1>Alexandre Ghmir</h1>
             <h1>Multimedia Student</h1>
           </div>
