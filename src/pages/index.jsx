@@ -137,7 +137,7 @@ export default function Home() {
             </div>
 
             <div className={styles.aboutButton}>
-              <a href="/cv.pdf" download="ALEXANDRE GHMIR.pdf">Get my resume</a>
+              <a href="/CV_ALEXANDRE_GHMIR.pdf" download="CV_ALEXANDRE_GHMIR.pdf">Get my resume</a>
             </div>
           </div>
         </section>
