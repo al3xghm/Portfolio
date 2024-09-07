@@ -13,19 +13,12 @@ function TextReveal({ text }) {
         const container = containerRef.current;
         const letters = lettersRef.current;
 
-        // Nettoyer les animations précédentes
-        gsap.globalTimeline.kill(); // Tuer toutes les animations actives
-
-        // Diviser le texte en lettres et ajouter des espaces après chaque mot
-        const lettersArray = text.split("").map((char, index, array) => {
-            if (char === " " && array[index - 1] !== " " && index !== 0) {
-                return [" ", "\u00A0"];
-            }
-            return char;
-        }).flat();
+        // Diviser le texte en mots
+        const wordsArray = text.split(" ");
 
         // Nettoyer le contenu existant dans le conteneur
         container.innerHTML = '';
+        lettersRef.current = []; // Nettoyer les références aux anciennes lettres
 
         // Créer une nouvelle timeline pour les animations
         const revealTimeline = gsap.timeline({
@@ -33,26 +26,37 @@ function TextReveal({ text }) {
                 trigger: container,
                 start: "top center",
                 end: () => `+=${container.offsetHeight}`,
-                scrub: 1, // Utiliser scrub pour une animation fluide
+                scrub: 1,
             }
         });
 
-        // Créer et animer chaque lettre
-        lettersArray.forEach((letter, index) => {
-            const span = document.createElement("span");
-            span.textContent = letter;
-            span.className = styles.letter;
-            container.appendChild(span);
-            letters.push(span);
+        // Créer et animer chaque mot séquentiellement
+        wordsArray.forEach((word, wordIndex) => {
+            const wordContainer = document.createElement("div"); // Chaque mot dans un <div> pour aller à la ligne
+            wordContainer.className = styles.word;
+            container.appendChild(wordContainer);
 
-            // Animation de base pour la lettre
-            revealTimeline.to(span, {
-                color: "var(--color)",
-                opacity: 1, // Augmenter l'opacité à 1
-                duration: 0.5,
-                ease: "power1.out", // Utiliser une courbe d.ease pour une transition douce
-                delay: index * 0.05,
-            }, 0);  // Starting all animations at the same time
+            // Variable pour contenir l'animation de chaque mot
+            const wordTimeline = gsap.timeline();
+
+            word.split("").forEach((letter, letterIndex) => {
+                const span = document.createElement("span");
+                span.textContent = letter;
+                span.className = styles.letter;
+                wordContainer.appendChild(span);
+                letters.push(span);
+
+                // Animation de la lettre
+                wordTimeline.to(span, {
+                    color: "var(--color)",
+                    opacity: 1,
+                    duration: 0.3,
+                    ease: "power1.out",
+                }, letterIndex * 0.1); // Chaque lettre se révèle une par une
+            });
+
+            // Ajouter l'animation du mot à la timeline principale
+            revealTimeline.add(wordTimeline, `+=0.5`); // Attendre 0.5s entre chaque mot
         });
 
         return () => {

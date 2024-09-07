@@ -13,7 +13,7 @@
 
 .letter {
   display: inline-block;
-  color: #A2A2A2; /* Couleur initiale en gris */
+  color: #A2A2A2; /* Couleur initiale des lettres */
   opacity: 0.5; /* Opacité initiale pour les lettres non révélées */
   transition: opacity 0.1s ease-in-out, color 0.1s ease-in-out;
 }
@@ -21,4 +21,11 @@
 .textContainer {
   font-size: 1.3rem;
   overflow: hidden;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.word {
+  display: inline-block;
+  margin-right: 0.5rem;
 }

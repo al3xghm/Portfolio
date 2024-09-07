@@ -43,7 +43,7 @@ const Loader = () => {
   return (
     <>
     <div id="loader" ref={loaderRef} className={`${styles.loader} ${loading ? styles.loading : styles.loaded}`} onAnimationEnd={handleAnimationEnd}>
-      <Image className={styles.logo} src="/baby.gif" alt="Baby" width={400} height={400} />
+      <Image className={styles.logo} src="/baby.gif" alt="Baby" width={400} height={400} unoptimized />
       <div className={styles.progress}>{progress}%</div>
     </div>
     </>

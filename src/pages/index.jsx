@@ -110,7 +110,7 @@ export default function Home() {
       <div className={`container ${contentLoaded ? 'fade-in' : ''}`}>
         <section id="home" className={styles.head}>
           <div className={styles.headTitle}>
-            <Image className={styles.headImage} src="/anim.gif" alt="Anim" width={200} height={200} />
+            <Image className={styles.headImage} src="/anim.gif" alt="Anim" width={200} height={200} unoptimized />
             <h1>Alexandre Ghmir</h1>
             <h1>Multimedia Student</h1>
           </div>
@@ -124,7 +124,7 @@ export default function Home() {
           <div className={styles.aboutImage}></div>
           <div className={styles.aboutText}>
             <h1>About me</h1>
-            <TextReveal text="I'm a multimedia student based in Paris, France. I'm passionate about web development, design, and digital art. I'm currently studying at Gustave Eiffel, a university in Paris. I'm always looking for new opportunities to learn and grow. Feel free to contact me if you want to work together or just to say hi!"></TextReveal>
+            <TextReveal text="I'm a multimedia student based in Paris, France. I'm passionate about web development and design. I'm currently studying at Gustave Eiffel, a university in Paris. I'm always looking for new opportunities to learn and grow. Feel free to contact me if you want to work together or just to say hi!"></TextReveal>
             <div className={styles.carousel}>
               <div className={styles.move}>
                 {allProgrammingLanguages.map(({ name, image }, index) => (
