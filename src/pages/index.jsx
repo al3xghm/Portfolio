@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { useRouter } from "next/navigation";
 import Head from 'next/head';
 import projects from '../data/projects.json';
 import styles from "../styles/page.module.scss";
 import Image from 'next/image';
 import TextReveal from '../components/TextReveal';
 import Loader from '../components/Loader';
+import { animatePageOut } from "../../animations";
 
 export default function Home() {
   const [time, setTime] = useState('');
@@ -91,22 +93,29 @@ export default function Home() {
 
   const allProgrammingLanguages = [...programmingLanguages, ...programmingLanguages];
 
+
+  const router = useRouter();
+
+  const handleClick = (href) => {
+    animatePageOut(href, router);
+  };
+
   return (
     <>
-    <Head>
-      <title>Portfolio | Alexandre GHMIR</title>
-      <meta charSet="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta name="title" content="Portfolio | Alexandre GHMIR" />
-      <meta name="author" content="Alexandre GHMIR" />
-      <meta name="description" content="Alexandre Ghmir's portfolio website. Multimedia student based in Paris, France. Passionate about web development, design, and digital art." />
-      <meta property="og:title" content="Portfolio | Alexandre GHMIR" />
-      <meta property="og:description" content="Alexandre Ghmir's portfolio website. Multimedia student based in Paris, France. Passionate about web development, design, and digital art." />
-      <meta property="og:image" content="/favicon/android-chrome-512x512.png" />
+      <Head>
+        <title>Portfolio | Alexandre GHMIR</title>
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="title" content="Portfolio | Alexandre GHMIR" />
+        <meta name="author" content="Alexandre GHMIR" />
+        <meta name="description" content="Alexandre Ghmir's portfolio website. Multimedia student based in Paris, France. Passionate about web development, design, and digital art." />
+        <meta property="og:title" content="Portfolio | Alexandre GHMIR" />
+        <meta property="og:description" content="Alexandre Ghmir's portfolio website. Multimedia student based in Paris, France. Passionate about web development, design, and digital art." />
+        <meta property="og:image" content="/favicon/android-chrome-512x512.png" />
       </Head>
-    {
-      showLoader && <Loader show={showLoader} />
-    }
+      {
+        showLoader && <Loader show={showLoader} />
+      }
       <div className={`container ${contentLoaded ? 'fade-in' : ''}`}>
         <section id="home" className={styles.head}>
           <div className={styles.headTitle}>
@@ -146,7 +155,12 @@ export default function Home() {
           <h1 id="projects">My projects</h1>
           <div className={styles.projectsContainer}>
             {projects.map((project) => (
-              <a href={`project/${project.slug}`} key={project.id}>
+              <div key={project.id} onClick={() => handleClick(`project/${project.slug}`)}
+              aria-label={`${project.title}`}
+              role="link"
+              tabIndex="0"
+              className='link'
+              >
                 <div className={styles.project}>
                   <h2>{project.title}</h2>
                   <p>{project.date}</p>
@@ -154,7 +168,8 @@ export default function Home() {
                     <div className={styles.overlay}></div>
                   </div>
                 </div>
-              </a>
+              </div>
+
             ))}
           </div>
         </section>

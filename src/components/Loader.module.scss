@@ -13,10 +13,15 @@
     opacity: 1;
     
     .logo{
-      filter: grayscale(100%);
+      width: 100px;
+      height: auto;
+      animation: pulse 1.5s ease-in-out infinite;
+      path {
+        fill: var(--color);
+        
+      }
     }
   }
-  
  
 
   .loaded {
@@ -28,9 +33,10 @@
       opacity: 1;
     }
     50% {
-      opacity: 0.7;
+      opacity: 0.5;
     }
   }
+  
   
   .progress {
     position: absolute;
