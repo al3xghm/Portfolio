@@ -13,5 +13,21 @@
       "/wr4.png"
     ],
     "link": "https://resaweb.ghmir.butmmi.o2switch.site/"
+  },
+  {
+    "id": 2,
+    "title": "Mini-Blog",
+    "slug": "miniblog",
+    "skills": ["HTML", "CSS", "PHP", "MVC"],
+    "description": "It's a second-year student project. I've created a mini-blog website that allows users to read and write posts. The site is built using the MVC (Model-View-Controller) architecture, which separates the application's logic, data, and presentation layers. This structure makes the code more organized and maintainable, enabling me to add new features and functionalities easily. With the mini-blog, users can share their thoughts and ideas with others in a user-friendly and intuitive interface.",
+    "date": "2024",
+    "images": [
+      "/mb1.png",
+      "/mb2.png",
+      "/mb3.png",
+      "/mb4.png",
+      "/mb5.png"
+    ],
+    "link": "https://miniblog.ghmir.butmmi.o2switch.site/"
   }
 ]

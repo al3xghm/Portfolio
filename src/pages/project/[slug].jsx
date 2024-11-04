@@ -58,6 +58,11 @@ const WorkPage = ({ project }) => {
             <img src={project.images[3]} alt={project.title} />
           </div>
         </div>
+        <div className={styles.img}>
+          {project.images.slice(3).map((image, index) => (
+            <img key={index} src={image} alt={`${project.title} - Image ${index + 4}`} />
+          ))}
+        </div>
         <div className={styles.projectnav}>
           <a href={`/project/${previousProject.slug}`} className={styles.previousProject}>
             <h3>Previous Project</h3>
