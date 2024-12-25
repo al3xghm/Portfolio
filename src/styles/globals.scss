@@ -5,6 +5,7 @@
 :root {
   --font-family: "Bricolage Grotesque", sans-serif;
   --color: white;
+  --opacity-color: rgba(255, 255, 255, 0.5);
   --bg-color: rgb(23, 23, 23);
   --bg-darker-color: rgb(0, 0, 0);
   --trans-bg-color: rgba(0, 0, 0, 0.5);
@@ -12,6 +13,7 @@
 
 :root[data-theme='dark'] {
   --color: white;
+  --opacity-color: rgba(255, 255, 255, 0.5);
   --bg-color: rgb(23, 23, 23);
   --bg-darker-color: rgb(0, 0, 0);
   --trans-bg-color: rgba(0, 0, 0, 0.5);
@@ -19,6 +21,7 @@
 
 :root[data-theme='light'] {
   --color: black;
+  --opacity-color: rgba(0, 0, 0, 0.5);
   --bg-color: white;
   --bg-darker-color: rgb(164, 162, 162);
   --trans-bg-color: rgba(255, 255, 255, 0.5);
@@ -105,12 +108,14 @@ a {
   background-image: url('../assets/img/noise.gif');
 }
 
-svg path{
+svg path {
   fill: var(--color);
 }
+
 .link {
   cursor: pointer;
 }
+
 //transition ici
 #transition-element {
   position: fixed;

@@ -10,7 +10,7 @@ const Footer = () => {
                 <div className={styles.footerLeft}>
                     <h2>Connect with me 👋🏼</h2>
                     <a className="button" href="mailto:alexandre.ghmir@edu.univ-eiffel.com">
-                        <button className={styles.button}>Get In Touch</button>
+                        <button className={styles.button}>Send an email</button>
                     </a>
                 </div>
                 <div className={styles.footerLink}>

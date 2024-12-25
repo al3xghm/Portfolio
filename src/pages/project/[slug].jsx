@@ -17,7 +17,7 @@ const WorkPage = ({ project }) => {
   // Trouver les projets précédents et suivants en bouclant autour de la liste
   const previousProject = currentIndex === 0 ? projects[projects.length - 1] : projects[currentIndex - 1];
   const nextProject = currentIndex === projects.length - 1 ? projects[0] : projects[currentIndex + 1];
-  
+
   return (
     <>
       <Head>
@@ -33,7 +33,12 @@ const WorkPage = ({ project }) => {
         <meta property="og:image" content={project.images[0]} />
       </Head>
       <div className={styles.projectcontainer}>
+        <div className={styles.projectbreadcrumb}>
+          <a href="/">← Back to home</a>
+        </div>
+
         <div className={styles.projecthead}>
+
           <h1>{project.title}</h1>
           <p>{project.date}</p>
         </div>
