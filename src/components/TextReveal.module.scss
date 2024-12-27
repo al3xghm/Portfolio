@@ -13,8 +13,8 @@
 
 .letter {
   display: inline-block;
-  color: #A2A2A2; /* Couleur initiale des lettres */
-  opacity: 0.5; /* Opacité initiale pour les lettres non révélées */
+  color: #A2A2A2; 
+  opacity: 0.5;
   transition: opacity 0.1s ease-in-out, color 0.1s ease-in-out;
 }
 

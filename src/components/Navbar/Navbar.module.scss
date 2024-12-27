@@ -8,11 +8,11 @@
   text-transform: uppercase;
   font-size: 0.9rem;
   background: transparent;
-  transition: opacity 0.3s; // Ajouter une transition d'opacité pour une animation douce
+  transition: opacity 0.3s; 
 
   &.hidden {
-    opacity: 0; // Faire disparaître la barre de navigation
-    pointer-events: none; // Désactiver les événements de souris lorsque la barre est cachée
+    opacity: 0; 
+    pointer-events: none; 
   }
 
   svg {
@@ -74,7 +74,7 @@
     &:first-child {
       margin-right: auto;
       font-weight: 700;
-      transition: none; // Supprimer la transition pour le premier élément li
+      transition: none; 
     }
   }
 }

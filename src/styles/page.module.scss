@@ -6,14 +6,11 @@
 
 .container {
     opacity: 0;
-    /* Commencez avec une opacité de 0 */
     transition: opacity 1s ease-in-out;
-    /* Ajoutez une transition d'opacité */
 }
 
 .container.fade-in {
     opacity: 1;
-    /* Augmentez l'opacité à 1 pour afficher le contenu */
 }
 
 .head {
@@ -30,16 +27,11 @@
         right: 0;
         top: 0;
         margin: auto auto;
-        // width: 40rem;
-        // height: auto;
         filter: grayscale(100%);
         opacity: 0.5;
-        // max-width: 90vw;
-
         @media screen and (max-width: 768px) {
             width: 90%;
             height: auto;
-            
         }
     }
 
@@ -75,7 +67,6 @@
         justify-content: space-between;
         align-items: center;
         padding: 30px 30px 30px 10px;
-        // text-transform: uppercase;
     }
 }
 
@@ -93,7 +84,6 @@
     .aboutheader {
         display: flex;
         justify-content: flex-start;
-        // align-items: center;
         gap: 5rem;
         height: 100%;
         width: 100%;
@@ -144,13 +134,11 @@
 
     .skills {
         display: flex;
-        // flex-direction: column;
         gap: 4rem;
         justify-content: space-between;
         margin: 0 auto;
         height: fit-content;
         width: 100%;
-
         font-size: 1.2rem;
 
         h1 {
@@ -158,9 +146,7 @@
         }
 
         div {
-            // display: grid;
             grid-template-columns: 60% 40%;
-
             gap: 1rem;
             justify-content: space-between;
 
@@ -195,7 +181,6 @@
                 cursor: pointer;
                 justify-content: space-between;
                 align-items: center;
-                // transition: all 0.5s ease-in-out;
 
                 b {
                     font-size: 1.2rem;
@@ -219,7 +204,6 @@
                     svg {
                         height: 15px;
                         width: 15px;
-                        // transition: all 0.25s ease-in-out;
                     }
                 }
             }
@@ -234,14 +218,12 @@
     }
 }
 
-
 .projects {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    // width: 90%;
     max-width: 1200px;
     height: fit-content;
     padding-top: 5rem;
@@ -281,8 +263,6 @@
 
         margin: 0 auto;
         transition: all 0.5s ease-in-out;
-
-
 
         &:hover {
 
@@ -400,7 +380,6 @@
     }
 }
 
-// Responsive design
 @media (max-width: 1200px) {
     .about {
         gap: 5rem;
