@@ -1,31 +1,22 @@
 "use client";
 
-import { useRouter } from "next/router"; // useRouter, pas next/navigation ici
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { animatePageIn } from "../animations";
-import Image from 'next/image'
 export default function Template({ children }) {
   const router = useRouter();
-  const [currentPath, setCurrentPath] = useState(router.asPath); // Garde la route actuelle
+  const [currentPath, setCurrentPath] = useState(router.asPath); 
 
   useEffect(() => {
-    // Animation lors du montage initial
     animatePageIn();
 
-    // Écoute des changements de route
     const handleRouteChange = (
-      // url
     ) => {
-      // if (url !== currentPath) {
-      // setCurrentPath(url);
-      animatePageIn(); // Lancer l'animation à chaque fois que la route change
-      // }
+      animatePageIn();
     };
 
-    // Ajout de l'événement de changement de route
     router.events.on("routeChangeComplete", handleRouteChange);
 
-    // Nettoyage lorsque le composant est démonté
     return () => {
       router.events.off("routeChangeComplete", handleRouteChange);
     };

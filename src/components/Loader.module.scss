@@ -1,48 +1,41 @@
 .loader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: var(--bg-color);
-    z-index: 1000;
-    transition: opacity 2.5s ease-in-out;
-    opacity: 1;
-    
-    .logo{
-      width: 100px;
-      height: auto;
-      animation: pulse 1.5s ease-in-out infinite;
-      path {
-        fill: var(--color);
-        
-      }
-    }
-  }
- 
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--bg-color);
+  z-index: 1000;
+  transition: opacity 2.5s ease-in-out;
+  opacity: 1;
 
-  .loaded {
-    opacity: 0;
-  }
-  
-  @keyframes pulse {
-    0%, 100% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0.5;
+  .logoimg {
+    width: 115px !important;
+    height: 160px !important;
+
+    path {
+      fill: var(--color);
     }
   }
-  
-  
-  .progress {
-    position: absolute;
-    bottom: 0px;
-    right: 20px;
-    font-size: 5rem;
-    color: var(--color);
-    animation: pulse 1.5s ease-in-out infinite;
+  .logo {
+    width: 152px !important;
+    height: 147px !important;
+    mix-blend-mode: difference;
   }
+}
+
+.loaded {
+  opacity: 0;
+}
+
+.progress {
+  position: absolute;
+  bottom: 0px;
+  right: 20px;
+  font-size: 5rem;
+  color: var(--color);
+  animation: pulse 1.5s ease-in-out infinite;
+}

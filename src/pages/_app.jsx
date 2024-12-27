@@ -10,7 +10,6 @@ import Head from 'next/head';
 function MyApp({ Component, pageProps }) {
   return (
     <>
-      <div className="noise"></div>
       <Theme />
       <Template>
 
@@ -18,10 +17,8 @@ function MyApp({ Component, pageProps }) {
         <main>
           <Component {...pageProps} />
         </main>
-        <footer>
           <Footer />
 
-        </footer>
       </Template>
 
     </>

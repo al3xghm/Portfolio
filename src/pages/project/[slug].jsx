@@ -33,57 +33,56 @@ const WorkPage = ({ project }) => {
         <meta property="og:image" content={project.images[0]} />
       </Head>
       <div className={styles.projectcontainer}>
-        <div className={styles.projectbreadcrumb}>
-          <a href="/">← Back to home</a>
-        </div>
 
-        <div className={styles.projecthead}>
 
-          <h1>{project.title}</h1>
-          <p>{project.date}</p>
-        </div>
-        <div className={styles.projectmain}>
-          <div className={styles.projectinfoleft}>
+        <div className={styles.projectleft}>
+          <div className={styles.projectheader}>
+
+            <div className={styles.projectbreadcrumb}>
+              <a href="/">← Back to home</a>
+            </div>
+            <h1>{project.title}</h1>
+            <div className={styles.aboutButton}>
+              <a href={project.link} target='_blank' title='Visit project'>Visit project →</a>
+            </div>
+
+          </div>
+
+          <div className={styles.projectinfo}>
+            <p>{project.type} project, {project.date}</p>
             <div className={styles.skillsContainer}>
               {project.skills.map((skill, index) => (
-                <h2 key={index}>{skill}</h2>
+                <p key={index}>{skill}</p>
               ))}
             </div>
-            <p>{project.description}</p>
-            <div className={styles.aboutButton}>
-              <a href={project.link}>View project →</a>
-            </div>
-          </div>
-          <img src={project.images[0]} alt={project.title} />
-        </div>
-        <div className={styles.img}>
-          <img src={project.images[1]} alt={project.title} />
-          <div className={styles.twoimg}>
-            <img src={project.images[2]} alt={project.title} />
-            <img src={project.images[3]} alt={project.title} />
+
           </div>
         </div>
-        <div className={styles.img}>
-          {project.images.slice(3).map((image, index) => (
-            <img key={index} src={image} alt={`${project.title} - Image ${index + 4}`} />
+
+        <div className={styles.projectright}>
+          <p>"{project.description}"</p>
+          {project.images.map((image, index) => (
+            <img key={index} src={image} alt={project.title} />
           ))}
         </div>
-        <div className={styles.projectnav}>
-          <a href={`/project/${previousProject.slug}`} className={styles.previousProject}>
-            <h3>Previous Project</h3>
-            <div className={styles.projectImage} style={{ backgroundImage: `url(${previousProject.images[0]})` }}>
-              <div className={styles.overlay}></div>
-            </div>
-            <p>{previousProject.title}</p>
-          </a>
-          <a href={`/project/${nextProject.slug}`} className={styles.nextProject}>
-            <h3>Next Project</h3>
-            <div className={styles.projectImage} style={{ backgroundImage: `url(${nextProject.images[0]})` }}>
-              <div className={styles.overlay}></div>
-            </div>
-            <p>{nextProject.title}</p>
-          </a>
-        </div>
+
+      </div>
+
+      <div className={styles.projectnav}>
+        <a href={`/project/${previousProject.slug}`} className={styles.previousProject}>
+          <strong>Previous Project</strong>
+          <div className={styles.projectImage} style={{ backgroundImage: `url(${previousProject.images[0]})` }}>
+            <div className={styles.overlay}></div>
+          </div>
+          <p>{previousProject.title}</p>
+        </a>
+        <a href={`/project/${nextProject.slug}`} className={styles.nextProject}>
+          <strong>Next Project</strong>
+          <div className={styles.projectImage} style={{ backgroundImage: `url(${nextProject.images[0]})` }}>
+            <div className={styles.overlay}></div>
+          </div>
+          <p>{nextProject.title}</p>
+        </a>
       </div>
     </>
   );

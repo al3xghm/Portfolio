@@ -86,26 +86,16 @@ a {
   text-decoration: none;
 }
 
+button {
+  font-family: var(--font-family);
+}
+
 .container {
-  // margin-top: 100px;
-  // margin-bottom: 100px;
   padding: 0 25px;
 
   @media (max-width: 768px) {
     padding: 0 10px;
   }
-}
-
-.noise {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0.01;
-  z-index: -2000;
-  /* Réglez l'opacité de la couleur à 50% (0.5) ou à la valeur de votre choix */
-  background-image: url('../assets/img/noise.gif');
 }
 
 svg path {

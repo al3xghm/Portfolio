@@ -3,14 +3,15 @@
     "id": 1,
     "title": "WeRent",
     "slug": "werent",
-    "skills": ["HTML", "CSS", "PHP", "SQL"],
-    "description": "It's a first-year student project. I've created a booking website called WeRent, which allows users to book various types of accommodations such as houses, villas, and apartments. In addition to using HTML, CSS, and JavaScript for the site's structure and interactivity, I've also employed PHP and MySQL to manage the database and server-side functionalities. Thanks to these technologies, WeRent offers a smooth and efficient booking experience for users.",
-    "date": "2024",
+    "skills": ["PHP", "CSS", "SQL", "JavaScript"],
+    "description": "For my first year project using databases, I've created a booking website called WeRent, which allows users to book various types of accommodations such as houses, villas, and apartments. In addition to using HTML, CSS, and JavaScript for the site's structure and interactivity, I've also employed PHP and MySQL to manage the database and server-side functionalities. Thanks to these technologies, WeRent offers a smooth and efficient booking experience for users. This project has helped me develop my skills in web design, web development and database management, enabling me to create dynamic and user-friendly websites.",
+    "date": "Spring 2024",
+    "type": "School solo",
     "images": [
-      "/wr1.png",
-      "/wr2.png",
-      "/wr3.png",
-      "/wr4.png"
+      "/wr1.webp",
+      "/wr2.webp",
+      "/wr3.webp",
+      "/wr4.webp"
     ],
     "link": "https://resaweb.ghmir.butmmi.o2switch.site/"
   },
@@ -18,16 +19,73 @@
     "id": 2,
     "title": "Mini-Blog",
     "slug": "miniblog",
-    "skills": ["HTML", "CSS", "PHP", "MVC"],
-    "description": "It's a second-year student project. I've created a mini-blog website that allows users to read and write posts. The site is built using the MVC (Model-View-Controller) architecture, which separates the application's logic, data, and presentation layers. This structure makes the code more organized and maintainable, enabling me to add new features and functionalities easily. With the mini-blog, users can share their thoughts and ideas with others in a user-friendly and intuitive interface.",
-    "date": "2024",
+    "skills": ["PHP", "SQL", "CSS", "MVC"],
+    "description": "For this second year back-end development project, I've created a mini-blog website that allows users to read and write posts. The site is built using the MVC (Model-View-Controller) architecture, which separates the application's logic, data, and presentation layers. This structure makes the code more organized and maintainable, enabling me to add new features and functionalities easily. With the mini-blog, users can share their thoughts and ideas with others in a user-friendly and intuitive interface. This project has helped me improve my skills in back-end development and database management, allowing me to create dynamic and interactive websites.",
+    "date": "Autumn 2024",
+    "type": "School solo",
     "images": [
-      "/mb1.png",
-      "/mb2.png",
-      "/mb3.png",
-      "/mb4.png",
-      "/mb5.png"
+      "/mb1.webp",
+      "/mb2.webp",
+      "/mb3.webp",
+      "/mb4.webp",
+      "/mb5.webp"
     ],
-    "link": "https://miniblog.ghmir.butmmi.o2switch.site/"
+    "link": "https://mini-blog.ghmir.butmmi.o2switch.site/"
+  },
+  {
+    "id": 3,
+    "title": "DataWars",
+    "slug": "datawars",
+    "skills": ["HTML", "CSS", "JavaScript", "Chart.JS"],
+    "description": "For this second year student project, I've created a data visualization website called DataWars, which displays Star Wars statistics in an interactive and engaging way. By using JavaScript and Chart.JS library, I've developed dynamic charts and graphs that present the data in a clear and visually appealing manner. With DataWars, users can explore and analyze different datasets, gaining insights and knowledge from the information presented. This project has helped me enhance my skills in front-end development and data visualization, enabling me to create informative and interactive websites.",
+    "date": "Autumn 2024",
+    "type": "School group of 3",
+    "images": [
+      "/dataviz1.webp",
+      "/dataviz2.webp",
+      "/dataviz3.webp",
+      "/dataviz4.webp",
+      "/dataviz5.webp",
+      "/dataviz6.webp"
+    ],
+    "link": "https://al3xghm.github.io/DataWars/"
+  },
+  {
+    "id": 4,
+    "title":"Paris Fashion Week",
+    "slug":"paris-fashion-week",
+    "skills":["Figma", "Photoshop"],
+    "description":"For this second year design project, I've created an institutional campaign that promotes - a fictional - Paris Fashion Week's 2025 edition. With Photoshop and Figma, I picked some typographies and photos and designed a series of visuals, including posters, responsive wireframes, and ads banners to showcase the event's theme. The campaign aims to attract fashion enthusiasts and industry professionals, highlighting the city's vibrant and creative fashion scene. This project has helped me develop my skills in graphic design and visual communication, enabling me to create compelling and engaging visuals.",
+    "date":"Autumn 2024",
+    "type":"School group of 2",
+    "images":[
+      "/cmp1.webp",
+      "/cmp2.webp",
+      "/cmp3.webp",
+      "/cmp4.webp",
+      "/cmp5.webp",
+      "/cmp6.webp",
+      "/cmp7.webp",
+      "/cmp8.webp",
+      "/cmp9.webp"
+    ],
+    "link":"https://www.figma.com/design/6NeShFkt1HriKOWwEK2TeG/PFW?m=auto&t=fN1wq3yURg88RbOU-1"
+  },
+  {
+    "id": 5,
+    "title":"ENT",
+    "slug":"ent",
+    "skills":["PHP", "CSS", "SQL", "MVC", "JavaScript"],
+    "description":"It's a first-year student project. I've created a complete university hub. The site features a modern and responsive bento design, ensuring that it looks great on all devices and screen sizes. With PHP, CSS, and JavaScript, I've built an accessible platform, for both students and teachers. The site includes a dashboard, a calendar, a messaging system and more. This project has helped me develop my skills in web design, web development, and database management, enabling me to create dynamic and user-friendly websites.",
+    "date":"Winter 2024",
+    "type":"School group of 4",
+    "images":[
+      "/ent1.webp",
+      "/ent2.webp",
+      "/ent3.webp",
+      "/ent4.webp",
+      "/ent5.webp"
+    ],
+    "link":"https://ent.ghmir.butmmi.o2switch.site/"
   }
 ]

@@ -3,7 +3,6 @@ import { useRouter } from "next/navigation";
 import Head from 'next/head';
 import projects from '../data/projects.json';
 import styles from "../styles/page.module.scss";
-import Image from 'next/image';
 import TextReveal from '../components/TextReveal';
 import Loader from '../components/Loader';
 import { animatePageOut } from "../../animations";
@@ -14,7 +13,6 @@ export default function Home() {
   const [showLoader, setShowLoader] = useState(true);
   const [contentLoaded, setContentLoaded] = useState(false);
 
-  // Check sessionStorage to determine if loader should be shown
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const loaderShown = sessionStorage.getItem('loaderShown', 'true');
@@ -25,7 +23,6 @@ export default function Home() {
     }
   }, []);
 
-  // Set a timeout to hide the loader and update sessionStorage
   useEffect(() => {
     if (!sessionStorage.getItem('loaderShown')) {
       const timer = setTimeout(() => {
@@ -38,7 +35,6 @@ export default function Home() {
     }
   }, [showLoader]);
 
-  // Update body overflow style based on loader state
   useEffect(() => {
     if (!showLoader) {
       document.body.style.overflow = 'auto';
@@ -47,7 +43,6 @@ export default function Home() {
     }
   }, [showLoader]);
 
-  // Update the time every second
   useEffect(() => {
     const interval = setInterval(() => {
       const date = new Date();
@@ -66,19 +61,19 @@ export default function Home() {
       id: 1,
       name: 'Inès',
       title: 'CEO of Agence DMC and internship supervisor',
-      text: "Alexandre Ghmir a effectué son stage en tant que Community Manager au sein de notre agence web, où il a brillamment géré la création de contenus et l'animation des réseaux sociaux. Sérieux, créatif et motivé, il a su s'adapter rapidement et répondre aux objectifs fixés. Je le recommande vivement pour ses compétences et son professionnalisme.",
+      text: "Alexandre completed his internship as a Community Manager at our web agency, where he excelled in content creation and social media management. Serious, creative, and motivated, he quickly adapted and met the set objectives. I highly recommend him for his skills and professionalism.",
     },
     {
       id: 2,
       name: 'Amel Chabah',
-      title: "Full-Stack Developer and UX/UI & Graphic Designer at GAEL Systems",
-      text: "J'ai eu le plaisir d'accompagner Alexandre dans son apprentissage de plusieurs langages ainsi que des bonnes pratiques UX et accessibilité. Il m'a impressionnée par sa capacité à apprendre rapidement et à s'auto-former avec une grande efficacité. Toujours proactif, il anticipe les besoins et prend de l'avance sur tous ses projets, ce qui témoigne d'une vraie passion pour le développement web, et montre un grand potentiel en tant que futur développeur.",
+      title: "Full-Stack Developer, UX/UI & Graphic Designer at GAEL Systems",
+      text: "I had the pleasure of guiding Alexandre in his learning of several programming languages as well as UX and accessibility best practices. I was impressed by his ability to learn quickly and self-learn with great efficiency. Always proactive, he anticipates needs and stays ahead on all his projects, demonstrating a true passion for web development and showing great potential as a future developer.",
     },
     {
       id: 3,
       name: 'Dorian Tison',
-      title: 'Video Editor and team mate',
-      text: "Alexandre se démarque par son développement et sa polyvalence , caractéristiques qu'il perfectionne actuellement dans le contexte de ses étude en BUT MMI. Son savoir-faire dans les outils de programmation, associé à son sens de la créativité, lui confère la capacité d'affronter des défis techniques de manière efficace et innovante. Toujours disposé à travailler en équipe, il démontre une excellente cohésion d'équipe et une aptitude exceptionnelle à s'adapter, même dans des circonstances compliquées. Je conseille fortement Alexandre pour son savoir-faire en matière de développement.",
+      title: 'Video Editor and teammate',
+      text: "Alexandre stands out for his efficiency and versatility, qualities he continues to refine through his studies. His proficiency with programming tools, combined with his creative mindset, enables him to solve technical problems in a practical and innovative way. Always ready to collaborate, he integrates seamlessly into a team and adapts quickly, even in challenging situations. I highly recommend Alexandre for his development skills and results-driven approach.",
     },
   ];
 
@@ -88,9 +83,6 @@ export default function Home() {
   const handleClick = (href) => {
     animatePageOut(href, router);
   };
-
-
-  // onclick of certification, certificationcontent display flex, else none, with gsap transition
 
   const handleCertificationClick = () => {
     const certificationContent = document.querySelector('.certification-content');
@@ -110,7 +102,6 @@ export default function Home() {
     const arrow = document.querySelector(`.testimonial-${id} .testimonial-arrow svg`);
     const isVisible = content.style.display === "block";
 
-    // Transition GSAP pour ouvrir ou fermer le contenu
     gsap.to(content, {
       height: isVisible ? 0 : "auto",
       opacity: isVisible ? 0 : 1,
@@ -124,7 +115,6 @@ export default function Home() {
       },
     });
 
-    // Rotation de la flèche
     gsap.to(arrow, {
       rotate: isVisible ? 0 : 90,
       duration: 0.5,
@@ -132,8 +122,6 @@ export default function Home() {
     });
 
   };
-
-
 
   return (
     <>
@@ -148,9 +136,9 @@ export default function Home() {
       <div className={`container ${contentLoaded ? 'fade-in' : ''}`}>
         <section id="home" className={styles.head}>
           <div className={styles.headTitle}>
-            <Image className={styles.headImage} src="/anim.gif" alt="Anim" width={200} height={200} unoptimized />
+            <img className={styles.headImage} id='headeranimation' src="/anim.webp" alt="Header animation" width={450} height={450} />
             <h1>Alexandre Ghmir</h1>
-            <h1>Multimedia Student</h1>
+            <h2>Web Developer</h2>
           </div>
           <div className={styles.headBottom}>
             <p>📍 Based in Paris, France</p>
@@ -167,14 +155,11 @@ export default function Home() {
               <div className={styles.aboutButton}>
                 <a href="/CV_ALEXANDRE_GHMIR.pdf" download="CV_ALEXANDRE_GHMIR.pdf">Get my resume</a>
               </div>
-
             </div>
-
           </div>
 
           <div className={styles.skills}>
             <h1>SKILLS</h1>
-
             <div><p>Web development</p>
               <ul>
                 <li>React</li>
@@ -227,24 +212,23 @@ export default function Home() {
               </div>
 
               <div className={`${styles.certificationcontent} certification-content`}>
-                <p>During my second year of the BUT MMI program, I had the opportunity to apply the skills I acquired in courses on accessibility, ergonomics, SEO, and other key aspects of web development. This experience enabled me to strengthen my understanding of best practices in web quality, aligned with the standards defined by Opquast.
+                <p>During my first and second years of the BUT MMI program, I had the opportunity to apply the skills I acquired in courses on accessibility, ergonomics, SEO, and other key aspects of web development. This experience enabled me to strengthen my understanding of best practices in web quality, aligned with the standards defined by Opquast.
                   I am currently preparing for the official Opquast certification, which I plan to take in March 2025. This preparation has deepened my knowledge and sharpened my expertise in delivering high-quality digital products that adhere to the highest standards of user experience and environmental considerations. As a web developer, this training further supports my commitment to creating exceptional, accessible, and impactful projects.
                 </p>
                 <a href="https://www.opquast.com/en/" target="_blank" title='Opquast website'>
-                Learn more about Opquast web quality certification
+                  <b>
+                    Learn more about Opquast web quality certification
+                  </b>
                 </a>
               </div>
-
             </div>
-
           </div>
-
         </section>
 
         <section className={styles.projects}>
           <h1 id="projects" className={styles.projectstitle}>WORK</h1>
           <div className={styles.projectsContainer}>
-            {projects.map((project) => (
+            {[...projects].reverse().map((project) => (
               <div key={project.id} onClick={() => handleClick(`project/${project.slug}`)}
                 aria-label={`${project.title}`}
                 role="link"

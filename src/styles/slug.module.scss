@@ -1,53 +1,77 @@
 .projectcontainer {
   margin-top: 80px;
-  padding: 0 60px;
+  padding: 0 50px;
+  display: flex;
+  gap: 50px;
+  justify-content: flex-end;
 
-  .projectbreadcrumb {
+  .projectleft {
+    padding: 150px 0 50px;
+
+    width: 35%;
     display: flex;
-    width: 80%;
-    margin: 0 auto;
-    gap: 10px;
-    align-items: center;
-    margin-bottom: 3rem;
-  }
+    flex-direction: column;
+    // padding: 20px 0;
+    gap: 1rem;
+    height: calc(100vh - 80px);
+    align-self: flex-start;
+    position: sticky;
+    top: 80px;
+    justify-content: flex-end;
+    align-items: flex-start;
 
-  svg {
-    color: var(--color);
-  }
+    .projectbreadcrumb {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 3rem;
+    }
 
-  h1 {
-    font-size: 2.1rem;
-  }
+    .projectheader {
+      margin-bottom: auto;
 
-  .projecthead {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 80%;
-    margin: 0 auto;
-  }
+      h1 {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+      }
 
-  .projectmain {
-    display: flex;
-    gap: 4rem;
-    margin-top: 20px;
-    width: 80%;
-    margin-right: auto;
-    margin-left: auto;
+      .aboutButton {
+        align-self: start;
+        padding: 10px 15px;
+        border: 1px solid var(--color);
+        border-radius: 15px;
+        background-color: transparent;
+        color: var(--color);
+        cursor: pointer;
+        transition: all 0.5s ease-in-out;
+        width: fit-content;
+        text-transform: uppercase;
 
-    .projectinfoleft {
+        &:hover {
+          background-color: var(--color);
+          color: var(--bg-color);
+        }
+      }
+
+    }
+
+    .projectinfo {
       display: flex;
       flex-direction: column;
-      gap: 2rem;
-      width: 50%;
+      gap: 1rem;
+
+      p {
+        font-size: 1rem;
+      }
 
       .skillsContainer {
         display: flex;
         gap: 10px;
         flex-wrap: wrap;
 
-        h2 {
-          font-size: 0.9em;
+        p {
+          font-size: 1rem;
           font-weight: 400;
           padding: 8px 12px;
           width: fit-content;
@@ -55,161 +79,121 @@
           border-radius: 20px;
         }
       }
-
-      p {
-        font-weight: 200;
-        font-size: 1.1rem;
-      }
-
-      .aboutButton {
-        align-self: start;
-        padding: 10px 20px;
-        border: 1px solid var(--color);
-        border-radius: 15px;
-        background-color: transparent;
-        color: var(--color);
-        cursor: pointer;
-        transition: all 0.5s ease-in-out;
-
-        &:hover {
-          background-color: var(--color);
-          color: var(--bg-color);
-        }
-      }
     }
 
-    img {
-      width: 50%;
-      height: 20vw;
-      object-fit: cover;
-      border-radius: 15px;
-      align-self: center;
-    }
+
+
   }
 
-  .img {
-    margin-top: 50px;
+  .projectright {
+    padding: 150px 0 50px;
+
+    width: 65%;
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
-    gap: 2rem;
-    width: 80%;
-    margin-right: auto;
-    margin-left: auto;
+    height: 100%;
+    gap: 20px;
+
+    p {
+      font-size: 1.3rem;
+      line-height: 1.5;
+      margin-bottom: 2rem;
+    }
 
     img {
       width: 100%;
-      height: 400px;
-      object-fit: cover;
-      border-radius: 15px;
-    }
-
-    .twoimg {
-      display: flex;
-      gap: 2rem;
-
-      img {
-        width: calc(50% - 1rem);
-      }
-    }
-  }
-
-  .projectnav {
-    margin-top: 50px;
-    display: flex;
-    text-align: center;
-    border-top: 1px solid var(--color);
-
-    .previousProject {
-      border-right: 1px solid var(--color);
-    }
-
-    .nextProject,
-    .previousProject {
-      width: 50%;
-      position: relative;
-      overflow: hidden;
-      height: 20vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-
-      &:hover .projectImage {
-        background-position: center;
-        height: 100%;
-        opacity: 1;
-        transition: all 0.5s ease-in-out;
-
-        .overlay {
-          width: 100%;
-          height: 100%;
-          background-color: var(--trans-bg-color);
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          transition: all 0.5s ease-in-out;
-          opacity: 1;
-        }
-      }
-
-      .projectImage {
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: -1;
-        transition: all 0.5s ease-in-out;
-        background-position: top;
-        width: 100%;
-        background-size: cover;
-        opacity: 0;
-        height: 100%;
-
-        .overlay {
-          width: 100%;
-          height: 100%;
-          background-color: var(--trans-bg-color);
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          transition: all 0.5s ease-in-out;
-          opacity: 0;
-        }
-      }
+      height: auto;
+      border-radius: 10px;
     }
   }
 
   @media screen and (max-width: 768px) {
-    padding: 0 10px;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 0 20px;
 
-    .projectmain {
-      flex-direction: column;
-      gap: 20px;
-      width: 90%;
+    .projectleft {
+      width: 100%;
+      padding: 0;
+      position: relative;
+      height: 100%;
 
-      .projectinfoleft {
-        width: 100%;
-      }
-
-      img {
-        width: 100%;
-        height: 300px;
+      .skillsContainer {
+        margin-bottom: 5rem;
       }
     }
 
-    .img {
-      margin-top: 2rem;
-      width: 90%;
+    .projectright {
+      width: 100%;
+      padding: 0;
+    }
+  }
 
-      img {
-        height: 300px;
+}
+
+.projectnav {
+  margin-top: 50px;
+  display: flex;
+  text-align: center;
+  border-top: 1px solid var(--color);
+  border-bottom: 1px solid var(--color);
+
+  .previousProject {
+    border-right: 1px solid var(--color);
+  }
+
+  .nextProject,
+  .previousProject {
+    width: 50%;
+    position: relative;
+    overflow: hidden;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    &:hover .projectImage {
+      background-position: center;
+      height: 100%;
+      opacity: 1;
+      transition: all 0.5s ease-in-out;
+
+      .overlay {
+        width: 100%;
+        height: 100%;
+        background-color: var(--trans-bg-color);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.5s ease-in-out;
+        opacity: 1;
       }
+    }
 
-      .twoimg {
-        flex-direction: column;
+    .projectImage {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      transition: all 0.5s ease-in-out;
+      background-position: top;
+      width: 100%;
+      background-size: cover;
+      opacity: 0;
+      height: 100%;
 
-        img {
-          width: 100%;
-        }
+      .overlay {
+        width: 100%;
+        height: 100%;
+        background-color: var(--trans-bg-color);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.5s ease-in-out;
+        opacity: 0;
       }
     }
   }
