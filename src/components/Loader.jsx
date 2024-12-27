@@ -69,6 +69,7 @@ const Loader = () => {
           className={styles.logo}
           autoPlay
           muted
+          playsInline
           loop={false}
           onTimeUpdate={handleTimeUpdate} 
           onLoadedMetadata={setPlaybackRate}
