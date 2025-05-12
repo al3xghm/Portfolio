@@ -92,7 +92,7 @@
     "id": 6,
     "title":"Albert Einstein : In pursuit of light",
     "slug":"albert-einstein",
-    "skills":["React", "NextJS", "Three.JS", "GSAP", "SCSS"],
+    "skills":["React", "Next.JS", "Three.JS", "GSAP", "SCSS"],
 "description": "It's a second-year project for an exhibition on Albert Einstein. The site, developed using NextJS, THREE.JS, and GSAP, acts as a showcase for the exhibition with an integrated online ticketing system. It provides an immersive experience with a space-time distortion background animation and features an interactive 3D digital exhibition where visitors explore Einstein's theories by clicking on colorful celestial objects.",
     "date":"Winter 2024 / Spring 2025",
     "type":"School group of 6",

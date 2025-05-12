@@ -163,6 +163,7 @@ export default function Home() {
             <div><p>Web development</p>
               <ul>
                 <li>React</li>
+                <li>React Native</li>
                 <li>Next.js</li>
                 <li>JavaScript</li>
                 <li>SASS/CSS</li>
@@ -194,6 +195,7 @@ export default function Home() {
                 <li>Github</li>
                 <li>Vercel</li>
                 <li>O2Switch</li>
+                <li>Expo</li>
               </ul>
             </div>
           </div>
