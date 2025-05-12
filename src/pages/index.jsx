@@ -199,30 +199,34 @@ export default function Home() {
           </div>
 
           <div className={styles.certifications}>
-            <h1>CERTIFICATIONS</h1>
-            <div className={styles.certificationslist}>
-              <div className={styles.certification} onClick={handleCertificationClick}>
-                <b>Opquast : Expert in web project quality control</b>
-                <span>Coming Soon</span>
-                <div className={`${styles.certificationarrow} certification-arrow`}>
-                  <svg width="20" height="20" viewBox="0 0 71 70" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M5.904 69.984L0.528 64.608L54.8 10.336L7.568 7.13599L14.608 0.095993L67.344 3.03999L70.416 55.776L63.376 62.816L60.176 15.712L5.904 69.984Z" fill="black" />
-                  </svg>
-                </div>
-              </div>
+  <h1>CERTIFICATIONS</h1>
+  <div className={styles.certificationslist}>
+    <div className={styles.certification} onClick={handleCertificationClick}>
+      <b>Opquast : Expert in web project quality control</b>
+      <span>866/1000</span>
+      <div className={`${styles.certificationarrow} certification-arrow`}>
+        <svg width="20" height="20" viewBox="0 0 71 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5.904 69.984L0.528 64.608L54.8 10.336L7.568 7.13599L14.608 0.095993L67.344 3.03999L70.416 55.776L63.376 62.816L60.176 15.712L5.904 69.984Z" fill="black" />
+        </svg>
+      </div>
+    </div>
 
-              <div className={`${styles.certificationcontent} certification-content`}>
-                <p>During my first and second years of the BUT MMI program, I had the opportunity to apply the skills I acquired in courses on accessibility, ergonomics, SEO, and other key aspects of web development. This experience enabled me to strengthen my understanding of best practices in web quality, aligned with the standards defined by Opquast.
-                  I am currently preparing for the official Opquast certification, which I plan to take in March 2025. This preparation has deepened my knowledge and sharpened my expertise in delivering high-quality digital products that adhere to the highest standards of user experience and environmental considerations. As a web developer, this training further supports my commitment to creating exceptional, accessible, and impactful projects.
-                </p>
-                <a href="https://www.opquast.com/en/" target="_blank" title='Opquast website'>
-                  <b>
-                    Learn more about Opquast web quality certification
-                  </b>
-                </a>
-              </div>
-            </div>
-          </div>
+    <div className={`${styles.certificationcontent} certification-content`}>
+      <p>
+        During my first and second years of the BUT MMI program, I had the opportunity to apply the skills I acquired in courses on accessibility, ergonomics, SEO, and other key aspects of web development. This experience helped me strengthen my understanding of best practices in web quality, aligned with the standards defined by Opquast. 
+        In April 2024, I successfully passed the Opquast certification, which further deepened my expertise in delivering high-quality digital products that adhere to the highest standards of user experience, accessibility, and environmental considerations. 
+        As a web developer, this training supports my commitment to creating exceptional and impactful projects.
+      </p>
+      <a 
+        href="https://directory.opquast.com/fr/certificat/WZ049R/" 
+        target="_blank" 
+        title="Opquast Certification - My official certificate"
+      >
+        <b>View my Opquast certification</b>
+      </a>
+    </div>
+  </div>
+</div>
         </section>
 
         <section className={styles.projects}>
