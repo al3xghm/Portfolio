@@ -138,7 +138,7 @@ export default function Home() {
           <div className={styles.headTitle}>
             <img className={styles.headImage} id='headeranimation' src="/anim.webp" alt="Header animation" width={450} height={450} />
             <h1>Alexandre Ghmir</h1>
-            <h2>Web Developer</h2>
+            <h2>MMI Student</h2>
           </div>
           <div className={styles.headBottom}>
             <p>📍 Based in Paris, France</p>
